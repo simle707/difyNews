@@ -1,0 +1,768 @@
+app:
+  description: ''
+  icon: 🤖
+  icon_background: '#FFEAD5'
+  icon_type: emoji
+  mode: workflow
+  name: AutoGetNews
+  use_icon_as_answer_icon: false
+dependencies:
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/ollama:1.0.0@ae50a2db261bffa7289677f2b0a60e60762ceb187b602113b72425ccbe772dc3
+    version: null
+kind: app
+version: 0.6.0
+workflow:
+  conversation_variables: []
+  environment_variables: []
+  features:
+    file_upload:
+      allowed_file_extensions:
+      - .JPG
+      - .JPEG
+      - .PNG
+      - .GIF
+      - .WEBP
+      - .SVG
+      allowed_file_types:
+      - image
+      allowed_file_upload_methods:
+      - local_file
+      - remote_url
+      enabled: false
+      fileUploadConfig:
+        attachment_image_file_size_limit: 2
+        audio_file_size_limit: 50
+        batch_count_limit: 5
+        file_size_limit: 15
+        file_upload_limit: 20
+        image_file_batch_limit: 10
+        image_file_size_limit: 10
+        single_chunk_attachment_limit: 10
+        video_file_size_limit: 100
+        workflow_file_upload_limit: 10
+      image:
+        enabled: false
+        number_limits: 3
+        transfer_methods:
+        - local_file
+        - remote_url
+      number_limits: 3
+    opening_statement: ''
+    retriever_resource:
+      enabled: true
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    suggested_questions: []
+    suggested_questions_after_answer:
+      enabled: false
+    text_to_speech:
+      enabled: false
+      language: ''
+      voice: ''
+  graph:
+    edges:
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: http-request
+        targetType: code
+      id: 1782439460863-source-1782701321034-target
+      selected: false
+      source: '1782439460863'
+      sourceHandle: source
+      target: '1782701321034'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: llm
+      id: 1782701321034-source-1782440079724-target
+      selected: false
+      source: '1782701321034'
+      sourceHandle: source
+      target: '1782440079724'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: http-request
+        targetType: code
+      id: 1782443321372-source-1782721157287-target
+      selected: false
+      source: '1782443321372'
+      sourceHandle: source
+      target: '1782721157287'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: http-request
+      id: 1782721157287-source-1782718094321-target
+      selected: false
+      source: '1782721157287'
+      sourceHandle: source
+      target: '1782718094321'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: tool
+        targetType: code
+      id: 1782443032644-source-1782721157287-target
+      selected: false
+      source: '1782443032644'
+      sourceHandle: source
+      target: '1782721157287'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: http-request
+      id: 1782443609589-source-1782718094321-target
+      selected: false
+      source: '1782443609589'
+      sourceHandle: source
+      target: '1782718094321'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: code
+      id: 1782440079724-source-1782807199342-target
+      selected: false
+      source: '1782440079724'
+      sourceHandle: source
+      target: '1782807199342'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: tool
+      id: 1782807199342-source-1782443032644-target
+      selected: false
+      source: '1782807199342'
+      sourceHandle: source
+      target: '1782443032644'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: http-request
+      id: 1782807199342-source-1782443321372-target
+      selected: false
+      source: '1782807199342'
+      sourceHandle: source
+      target: '1782443321372'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: llm
+      id: 1782440079724-source-1782443609589-target
+      selected: false
+      source: '1782440079724'
+      sourceHandle: source
+      target: '1782443609589'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: http-request
+        targetType: code
+      id: 1782439460863-source-1782876170425-target
+      source: '1782439460863'
+      sourceHandle: source
+      target: '1782876170425'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: llm
+      id: 1782876170425-source-1782440079724-target
+      source: '1782876170425'
+      sourceHandle: source
+      target: '1782440079724'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: start
+        targetType: http-request
+      id: 1782876535946-source-1782439460863-target
+      source: '1782876535946'
+      sourceHandle: source
+      target: '1782439460863'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    nodes:
+    - data:
+        authorization:
+          config: null
+          type: no-auth
+        body:
+          data: []
+          type: none
+        headers: ''
+        method: get
+        params: ''
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: 100
+        selected: false
+        ssl_verify: true
+        timeout:
+          max_connect_timeout: 0
+          max_read_timeout: 0
+          max_write_timeout: 0
+        title: http_get_news
+        type: http-request
+        url: https://60s.viki.moe/v2/60s
+        variables: []
+      height: 121
+      id: '1782439460863'
+      position:
+        x: 330.09892769092505
+        y: 390.2508079589278
+      positionAbsolute:
+        x: 330.09892769092505
+        y: 390.2508079589278
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: qwen3:8b
+          provider: langgenius/ollama/ollama
+        prompt_template:
+        - id: 75432e6e-899d-430c-bcd9-74ea8b36d70e
+          role: system
+          text: '你是抖音早安电台的暖心主播，把下方新闻素材改写成 90 秒左右的口播文案。
+
+            要求：
+
+            1. 开头问候+日期星期，比如“早上好，今天是{{#1782876170425.today_date#}}{{#1782876170425.today_week#}}，欢迎收听今日早安资讯”
+
+            2. 精选6-8条核心新闻，口语化表达，不用书面语和序号，用自然过渡连接
+
+            3. 结尾加一句简短早安寄语，引导点赞关注
+
+            4. 总字数 350-450 字，适配正常语速 90 秒
+
+            5. 风格温暖沉稳，符合早间收听氛围
+
+
+            新闻素材：
+
+            {{#1782701321034.news_text#}}'
+        selected: false
+        structured_output:
+          schema:
+            additionalProperties: false
+            properties:
+              radio_script:
+                type: string
+            required:
+            - radio_script
+            type: object
+        structured_output_enabled: false
+        title: gen_script
+        type: llm
+        vision:
+          enabled: false
+      height: 88
+      id: '1782440079724'
+      position:
+        x: 976.5855610987037
+        y: 384.31925683789063
+      positionAbsolute:
+        x: 976.5855610987037
+        y: 384.31925683789063
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        is_team_authorization: true
+        paramSchemas:
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: The text to be converted.
+            ja_JP: The text to be converted.
+            pt_BR: The text to be converted.
+            zh_Hans: 要转换的文本。
+          label:
+            en_US: Text
+            ja_JP: Text
+            pt_BR: Text
+            zh_Hans: 文本
+          llm_description: The text to be converted.
+          max: null
+          min: null
+          name: text
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: null
+          form: form
+          human_description:
+            en_US: All available TTS models. You can config model in the Model Provider
+              of Settings.
+            ja_JP: All available TTS models. You can config model in the Model Provider
+              of Settings.
+            pt_BR: All available TTS models. You can config model in the Model Provider
+              of Settings.
+            zh_Hans: 所有可用的 TTS 模型。你可以在设置中的模型供应商里配置。
+          label:
+            en_US: Model
+            ja_JP: Model
+            pt_BR: Model
+            zh_Hans: Model
+          llm_description: null
+          max: null
+          min: null
+          name: model
+          options:
+          - icon: null
+            label:
+              en_US: FastAPI-TTS(langgenius/openai_api_compatible/openai_api_compatible)
+              ja_JP: FastAPI-TTS(langgenius/openai_api_compatible/openai_api_compatible)
+              pt_BR: FastAPI-TTS(langgenius/openai_api_compatible/openai_api_compatible)
+              zh_Hans: FastAPI-TTS(langgenius/openai_api_compatible/openai_api_compatible)
+            value: langgenius/openai_api_compatible/openai_api_compatible#FastAPI-TTS
+          placeholder:
+            en_US: Select a model
+            ja_JP: Select a model
+            pt_BR: Select a model
+            zh_Hans: 选择模型
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: select
+        - auto_generate: null
+          default: null
+          form: form
+          human_description:
+            en_US: Select a voice for FastAPI-TTS model
+            ja_JP: Select a voice for FastAPI-TTS model
+            pt_BR: Select a voice for FastAPI-TTS model
+            zh_Hans: Select a voice for FastAPI-TTS model
+          label:
+            en_US: Voice of FastAPI-TTS(langgenius/openai_api_compatible/openai_api_compatible)
+            ja_JP: Voice of FastAPI-TTS(langgenius/openai_api_compatible/openai_api_compatible)
+            pt_BR: Voice of FastAPI-TTS(langgenius/openai_api_compatible/openai_api_compatible)
+            zh_Hans: Voice of FastAPI-TTS(langgenius/openai_api_compatible/openai_api_compatible)
+          llm_description: null
+          max: null
+          min: null
+          name: voice#langgenius/openai_api_compatible/openai_api_compatible#FastAPI-TTS
+          options:
+          - icon: null
+            label:
+              en_US: zh-CN-XiaoxiaoNeural
+              ja_JP: zh-CN-XiaoxiaoNeural
+              pt_BR: zh-CN-XiaoxiaoNeural
+              zh_Hans: zh-CN-XiaoxiaoNeural
+            value: zh-CN-XiaoxiaoNeural
+          - icon: null
+            label:
+              en_US: zh-CN-YunxiNeural
+              ja_JP: zh-CN-YunxiNeural
+              pt_BR: zh-CN-YunxiNeural
+              zh_Hans: zh-CN-YunxiNeural
+            value: zh-CN-YunxiNeural
+          - icon: null
+            label:
+              en_US: en-US-JennyNeural
+              ja_JP: en-US-JennyNeural
+              pt_BR: en-US-JennyNeural
+              zh_Hans: en-US-JennyNeural
+            value: en-US-JennyNeural
+          placeholder:
+            en_US: Select a voice
+            ja_JP: Select a voice
+            pt_BR: Select a voice
+            zh_Hans: Select a voice
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: select
+        params:
+          model: ''
+          text: ''
+          voice#langgenius/openai_api_compatible/openai_api_compatible#FastAPI-TTS: ''
+        plugin_id: null
+        plugin_unique_identifier: ''
+        provider_icon: /console/api/workspaces/current/tool-provider/builtin/audio/icon
+        provider_id: audio
+        provider_name: audio
+        provider_type: builtin
+        selected: false
+        title: Text To Speech
+        tool_configurations:
+          model:
+            type: constant
+            value: langgenius/openai_api_compatible/openai_api_compatible#FastAPI-TTS
+          voice#langgenius/openai_api_compatible/openai_api_compatible#FastAPI-TTS:
+            type: constant
+            value: zh-CN-XiaoxiaoNeural
+        tool_description: 将文本转换为音频文件。
+        tool_label: Text To Speech
+        tool_name: tts
+        tool_node_version: '2'
+        tool_parameters:
+          text:
+            type: mixed
+            value: '{{#1782807199342.res_script#}}'
+        type: tool
+      height: 114
+      id: '1782443032644'
+      position:
+        x: 1684.8968128897475
+        y: 293.8631022420743
+      positionAbsolute:
+        x: 1684.8968128897475
+        y: 293.8631022420743
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        authorization:
+          config: null
+          type: no-auth
+        body:
+          data: []
+          type: none
+        headers: ''
+        method: get
+        params: ''
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: 100
+        selected: false
+        ssl_verify: true
+        timeout:
+          max_connect_timeout: 0
+          max_read_timeout: 0
+          max_write_timeout: 0
+        title: http_get_bg
+        type: http-request
+        url: https://picsum.photos/seed/nature/1080/1920
+        variables: []
+      height: 137
+      id: '1782443321372'
+      position:
+        x: 1684.8968128897475
+        y: 455.76042892363
+      positionAbsolute:
+        x: 1684.8968128897475
+        y: 455.76042892363
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: qwen3:8b
+          provider: langgenius/ollama/ollama
+        prompt_template:
+        - id: 83002e28-1384-4226-a7ba-ac536480f1f8
+          role: system
+          text: '以下是口播文案，请将其转换为 SRT 字幕格式。
+
+            假设正常朗读语速约 5 字/秒，按顺序为每段分配时间轴。
+
+            仅输出 SRT 内容，不要加解释。
+
+
+            口播文案：
+
+            {{#1782440079724.text#}}'
+        selected: false
+        structured_output_enabled: false
+        title: llm_srt
+        type: llm
+        vision:
+          enabled: false
+      height: 88
+      id: '1782443609589'
+      position:
+        x: 1684.8968128897475
+        y: 658.140643385445
+      positionAbsolute:
+        x: 1684.8968128897475
+        y: 658.140643385445
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        code: "import json\n\ndef main(body) -> dict:\n    try:\n        if not body:\n\
+          \            return {\"news_text\": \"HTTP 返回为空，请检查接口连通性\"}\n        d =\
+          \ json.loads(body)\n        news_list = d.get(\"data\", {}).get(\"news\"\
+          , [])\n        lines = [f\"{i+1}. {str(n)}\" for i, n in enumerate(news_list[:15])]\n\
+          \        return {\"news_text\": \"\\n\".join(lines)}\n    except Exception\
+          \ as e:\n        return {\"news_text\": f\"解析错误: {e}\\n原始内容: {body[:200]}\"\
+          }"
+        code_language: python3
+        outputs:
+          news_text:
+            children: null
+            type: string
+        selected: false
+        title: 新闻数据清洗
+        type: code
+        variables:
+        - value_selector:
+          - '1782439460863'
+          - body
+          value_type: string
+          variable: body
+      height: 52
+      id: '1782701321034'
+      position:
+        x: 661.23318403066
+        y: 390.2508079589278
+      positionAbsolute:
+        x: 661.23318403066
+        y: 390.2508079589278
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        authorization:
+          config: null
+          type: no-auth
+        body:
+          data:
+          - id: key-value-651
+            key: ''
+            type: text
+            value: "{\n  \"image_url\": \"{{#1782721157287.image_url#}}\",\n  \"audio_url\"\
+              : \"{{#1782721157287.audio_url#}}\",\n  \"srt\": \"{{#1782443609589.text#}}\"\
+              \n\n}"
+          type: json
+        headers: Content-Type:application/json
+        method: post
+        params: ''
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: 100
+        selected: false
+        ssl_verify: true
+        timeout:
+          max_connect_timeout: 0
+          max_read_timeout: 0
+          max_write_timeout: 0
+        title: Video_HTTP_request
+        type: http-request
+        url: http://host.docker.internal:7888/make_video
+        variables: []
+      height: 137
+      id: '1782718094321'
+      position:
+        x: 2408.1919230042204
+        y: 447.8707771395801
+      positionAbsolute:
+        x: 2408.1919230042204
+        y: 447.8707771395801
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        code: "import json\n\ndef main(http_get_bg: list, text_to_speech_files: list):\n\
+          \    DIFY_HOST = \"http://localhost:5001\"\n    # ---------- 1. 解析背景图 ----------\n\
+          \    image_url = \"\"\n    try:\n        if isinstance(http_get_bg, list)\
+          \ and len(http_get_bg) > 0:\n            image_url = http_get_bg[0].get(\"\
+          url\", \"\")\n            # if raw_image_url.startswith(\"/files/\"):\n\
+          \            #     image_url = DIFY_HOST + raw_image_url\n\n    except Exception\
+          \ as e:\n        print(\"解析 HTTP_GET_BG 失败:\", str(e))\n\n    # ----------\
+          \ 2. 解析音频 ----------\n    audio_url = \"\"\n    try:\n        if isinstance(text_to_speech_files,\
+          \ list) and len(text_to_speech_files) > 0:\n            audio_url = text_to_speech_files[0].get(\"\
+          url\", \"\")\n            # if raw_audio_url.startswith(\"/files/\"):\n\
+          \            #     audio_url = DIFY_HOST + raw_audio_url\n\n    except Exception\
+          \ as e:\n        print(\"解析 TEXT_TO_SPEECH 失败:\", str(e))\n\n    # ----------\
+          \ 4. 返回（给下游 HTTP 节点用） ----------\n    return {\n        \"image_url\": image_url,\n\
+          \        \"audio_url\": audio_url\n    }"
+        code_language: python3
+        outputs:
+          audio_url:
+            children: null
+            type: string
+          image_url:
+            children: null
+            type: string
+        selected: false
+        title: 数据解析
+        type: code
+        variables:
+        - value_selector:
+          - '1782443321372'
+          - files
+          value_type: array[file]
+          variable: http_get_bg
+        - value_selector:
+          - '1782443032644'
+          - files
+          value_type: array[file]
+          variable: text_to_speech_files
+      height: 52
+      id: '1782721157287'
+      position:
+        x: 2016.7679431850065
+        y: 402.11854157626124
+      positionAbsolute:
+        x: 2016.7679431850065
+        y: 402.11854157626124
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        code: "\nimport re\ndef main(script: str):\n    res_script = re.sub(r'<think>.*?</think>',\
+          \ '', script, flags=re.S)\n    return {\n        \"res_script\": res_script\n\
+          \    }\n"
+        code_language: python3
+        outputs:
+          res_script:
+            children: null
+            type: string
+        selected: false
+        title: 处理SRT标签
+        type: code
+        variables:
+        - value_selector:
+          - '1782440079724'
+          - text
+          value_type: string
+          variable: script
+      height: 52
+      id: '1782807199342'
+      position:
+        x: 1365.2651450943195
+        y: 370.97789819081623
+      positionAbsolute:
+        x: 1365.2651450943195
+        y: 370.97789819081623
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        code: "from datetime import datetime\n\ndef main():\n    now = datetime.now()\n\
+          \    date_str = now.strftime(\"%Y年%m月%d日\")\n    week_map = [\"星期一\",\"\
+          星期二\",\"星期三\",\"星期四\",\"星期五\",\"星期六\",\"星期天\"]\n    week_str = week_map[now.weekday()]\n\
+          \n    return {\n        \"today_date\": date_str,\n        \"today_week\"\
+          : week_str\n    }\n"
+        code_language: python3
+        outputs:
+          today_date:
+            children: null
+            type: string
+          today_week:
+            children: null
+            type: string
+        selected: false
+        title: today_datetime
+        type: code
+        variables: []
+      height: 52
+      id: '1782876170425'
+      position:
+        x: 661.23318403066
+        y: 529.9078738334728
+      positionAbsolute:
+        x: 661.23318403066
+        y: 529.9078738334728
+      selected: true
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        selected: false
+        title: 用户输入
+        type: start
+        variables: []
+      height: 73
+      id: '1782876535946'
+      position:
+        x: -15.657976154904063
+        y: 406.4547549722519
+      positionAbsolute:
+        x: -15.657976154904063
+        y: 406.4547549722519
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    viewport:
+      x: -1612.2291361622156
+      y: -313.1556333237911
+      zoom: 1.0206303507134746
+  rag_pipeline_variables: []
