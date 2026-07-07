@@ -93,56 +93,6 @@ workflow:
       type: custom
       zIndex: 0
     - data:
-        isInIteration: false
-        isInLoop: false
-        sourceType: http-request
-        targetType: code
-      id: 1782443321372-source-1782721157287-target
-      selected: false
-      source: '1782443321372'
-      sourceHandle: source
-      target: '1782721157287'
-      targetHandle: target
-      type: custom
-      zIndex: 0
-    - data:
-        isInIteration: false
-        isInLoop: false
-        sourceType: code
-        targetType: http-request
-      id: 1782721157287-source-1782718094321-target
-      selected: false
-      source: '1782721157287'
-      sourceHandle: source
-      target: '1782718094321'
-      targetHandle: target
-      type: custom
-      zIndex: 0
-    - data:
-        isInLoop: false
-        sourceType: tool
-        targetType: code
-      id: 1782443032644-source-1782721157287-target
-      selected: false
-      source: '1782443032644'
-      sourceHandle: source
-      target: '1782721157287'
-      targetHandle: target
-      type: custom
-      zIndex: 0
-    - data:
-        isInLoop: false
-        sourceType: llm
-        targetType: http-request
-      id: 1782443609589-source-1782718094321-target
-      selected: false
-      source: '1782443609589'
-      sourceHandle: source
-      target: '1782718094321'
-      targetHandle: target
-      type: custom
-      zIndex: 0
-    - data:
         isInLoop: false
         sourceType: llm
         targetType: code
@@ -156,45 +106,10 @@ workflow:
       zIndex: 0
     - data:
         isInLoop: false
-        sourceType: code
-        targetType: tool
-      id: 1782807199342-source-1782443032644-target
-      selected: false
-      source: '1782807199342'
-      sourceHandle: source
-      target: '1782443032644'
-      targetHandle: target
-      type: custom
-      zIndex: 0
-    - data:
-        isInLoop: false
-        sourceType: code
-        targetType: http-request
-      id: 1782807199342-source-1782443321372-target
-      selected: false
-      source: '1782807199342'
-      sourceHandle: source
-      target: '1782443321372'
-      targetHandle: target
-      type: custom
-      zIndex: 0
-    - data:
-        isInLoop: false
-        sourceType: llm
-        targetType: llm
-      id: 1782440079724-source-1782443609589-target
-      selected: false
-      source: '1782440079724'
-      sourceHandle: source
-      target: '1782443609589'
-      targetHandle: target
-      type: custom
-      zIndex: 0
-    - data:
-        isInLoop: false
         sourceType: http-request
         targetType: code
       id: 1782439460863-source-1782876170425-target
+      selected: false
       source: '1782439460863'
       sourceHandle: source
       target: '1782876170425'
@@ -206,6 +121,7 @@ workflow:
         sourceType: code
         targetType: llm
       id: 1782876170425-source-1782440079724-target
+      selected: false
       source: '1782876170425'
       sourceHandle: source
       target: '1782440079724'
@@ -214,10 +130,21 @@ workflow:
       zIndex: 0
     - data:
         isInLoop: false
-        sourceType: start
+        sourceType: code
         targetType: http-request
-      id: 1782876535946-source-1782439460863-target
-      source: '1782876535946'
+      id: 1782807199342-source-1782718094321-target
+      source: '1782807199342'
+      sourceHandle: source
+      target: '1782718094321'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: trigger-schedule
+        targetType: http-request
+      id: 1783329245279-source-1782439460863-target
+      source: '1783329245279'
       sourceHandle: source
       target: '1782439460863'
       targetHandle: target
@@ -239,7 +166,7 @@ workflow:
           retry_enabled: true
           retry_interval: 100
         selected: false
-        ssl_verify: true
+        ssl_verify: false
         timeout:
           max_connect_timeout: 0
           max_read_timeout: 0
@@ -251,11 +178,11 @@ workflow:
       height: 121
       id: '1782439460863'
       position:
-        x: 330.09892769092505
-        y: 390.2508079589278
+        x: 343.8159408977274
+        y: 464.66176276344703
       positionAbsolute:
-        x: 330.09892769092505
-        y: 390.2508079589278
+        x: 343.8159408977274
+        y: 464.66176276344703
       selected: false
       sourcePosition: right
       targetPosition: left
@@ -310,245 +237,11 @@ workflow:
       height: 88
       id: '1782440079724'
       position:
-        x: 976.5855610987037
-        y: 384.31925683789063
+        x: 1061.8270003124037
+        y: 464.66176276344703
       positionAbsolute:
-        x: 976.5855610987037
-        y: 384.31925683789063
-      selected: false
-      sourcePosition: right
-      targetPosition: left
-      type: custom
-      width: 242
-    - data:
-        is_team_authorization: true
-        paramSchemas:
-        - auto_generate: null
-          default: null
-          form: llm
-          human_description:
-            en_US: The text to be converted.
-            ja_JP: The text to be converted.
-            pt_BR: The text to be converted.
-            zh_Hans: 要转换的文本。
-          label:
-            en_US: Text
-            ja_JP: Text
-            pt_BR: Text
-            zh_Hans: 文本
-          llm_description: The text to be converted.
-          max: null
-          min: null
-          name: text
-          options: []
-          placeholder: null
-          precision: null
-          required: true
-          scope: null
-          template: null
-          type: string
-        - auto_generate: null
-          default: null
-          form: form
-          human_description:
-            en_US: All available TTS models. You can config model in the Model Provider
-              of Settings.
-            ja_JP: All available TTS models. You can config model in the Model Provider
-              of Settings.
-            pt_BR: All available TTS models. You can config model in the Model Provider
-              of Settings.
-            zh_Hans: 所有可用的 TTS 模型。你可以在设置中的模型供应商里配置。
-          label:
-            en_US: Model
-            ja_JP: Model
-            pt_BR: Model
-            zh_Hans: Model
-          llm_description: null
-          max: null
-          min: null
-          name: model
-          options:
-          - icon: null
-            label:
-              en_US: FastAPI-TTS(langgenius/openai_api_compatible/openai_api_compatible)
-              ja_JP: FastAPI-TTS(langgenius/openai_api_compatible/openai_api_compatible)
-              pt_BR: FastAPI-TTS(langgenius/openai_api_compatible/openai_api_compatible)
-              zh_Hans: FastAPI-TTS(langgenius/openai_api_compatible/openai_api_compatible)
-            value: langgenius/openai_api_compatible/openai_api_compatible#FastAPI-TTS
-          placeholder:
-            en_US: Select a model
-            ja_JP: Select a model
-            pt_BR: Select a model
-            zh_Hans: 选择模型
-          precision: null
-          required: true
-          scope: null
-          template: null
-          type: select
-        - auto_generate: null
-          default: null
-          form: form
-          human_description:
-            en_US: Select a voice for FastAPI-TTS model
-            ja_JP: Select a voice for FastAPI-TTS model
-            pt_BR: Select a voice for FastAPI-TTS model
-            zh_Hans: Select a voice for FastAPI-TTS model
-          label:
-            en_US: Voice of FastAPI-TTS(langgenius/openai_api_compatible/openai_api_compatible)
-            ja_JP: Voice of FastAPI-TTS(langgenius/openai_api_compatible/openai_api_compatible)
-            pt_BR: Voice of FastAPI-TTS(langgenius/openai_api_compatible/openai_api_compatible)
-            zh_Hans: Voice of FastAPI-TTS(langgenius/openai_api_compatible/openai_api_compatible)
-          llm_description: null
-          max: null
-          min: null
-          name: voice#langgenius/openai_api_compatible/openai_api_compatible#FastAPI-TTS
-          options:
-          - icon: null
-            label:
-              en_US: zh-CN-XiaoxiaoNeural
-              ja_JP: zh-CN-XiaoxiaoNeural
-              pt_BR: zh-CN-XiaoxiaoNeural
-              zh_Hans: zh-CN-XiaoxiaoNeural
-            value: zh-CN-XiaoxiaoNeural
-          - icon: null
-            label:
-              en_US: zh-CN-YunxiNeural
-              ja_JP: zh-CN-YunxiNeural
-              pt_BR: zh-CN-YunxiNeural
-              zh_Hans: zh-CN-YunxiNeural
-            value: zh-CN-YunxiNeural
-          - icon: null
-            label:
-              en_US: en-US-JennyNeural
-              ja_JP: en-US-JennyNeural
-              pt_BR: en-US-JennyNeural
-              zh_Hans: en-US-JennyNeural
-            value: en-US-JennyNeural
-          placeholder:
-            en_US: Select a voice
-            ja_JP: Select a voice
-            pt_BR: Select a voice
-            zh_Hans: Select a voice
-          precision: null
-          required: false
-          scope: null
-          template: null
-          type: select
-        params:
-          model: ''
-          text: ''
-          voice#langgenius/openai_api_compatible/openai_api_compatible#FastAPI-TTS: ''
-        plugin_id: null
-        plugin_unique_identifier: ''
-        provider_icon: /console/api/workspaces/current/tool-provider/builtin/audio/icon
-        provider_id: audio
-        provider_name: audio
-        provider_type: builtin
-        selected: false
-        title: Text To Speech
-        tool_configurations:
-          model:
-            type: constant
-            value: langgenius/openai_api_compatible/openai_api_compatible#FastAPI-TTS
-          voice#langgenius/openai_api_compatible/openai_api_compatible#FastAPI-TTS:
-            type: constant
-            value: zh-CN-XiaoxiaoNeural
-        tool_description: 将文本转换为音频文件。
-        tool_label: Text To Speech
-        tool_name: tts
-        tool_node_version: '2'
-        tool_parameters:
-          text:
-            type: mixed
-            value: '{{#1782807199342.res_script#}}'
-        type: tool
-      height: 114
-      id: '1782443032644'
-      position:
-        x: 1684.8968128897475
-        y: 293.8631022420743
-      positionAbsolute:
-        x: 1684.8968128897475
-        y: 293.8631022420743
-      selected: false
-      sourcePosition: right
-      targetPosition: left
-      type: custom
-      width: 242
-    - data:
-        authorization:
-          config: null
-          type: no-auth
-        body:
-          data: []
-          type: none
-        headers: ''
-        method: get
-        params: ''
-        retry_config:
-          max_retries: 3
-          retry_enabled: true
-          retry_interval: 100
-        selected: false
-        ssl_verify: true
-        timeout:
-          max_connect_timeout: 0
-          max_read_timeout: 0
-          max_write_timeout: 0
-        title: http_get_bg
-        type: http-request
-        url: https://picsum.photos/seed/nature/1080/1920
-        variables: []
-      height: 137
-      id: '1782443321372'
-      position:
-        x: 1684.8968128897475
-        y: 455.76042892363
-      positionAbsolute:
-        x: 1684.8968128897475
-        y: 455.76042892363
-      selected: false
-      sourcePosition: right
-      targetPosition: left
-      type: custom
-      width: 242
-    - data:
-        context:
-          enabled: false
-          variable_selector: []
-        model:
-          completion_params:
-            temperature: 0.7
-          mode: chat
-          name: qwen3:8b
-          provider: langgenius/ollama/ollama
-        prompt_template:
-        - id: 83002e28-1384-4226-a7ba-ac536480f1f8
-          role: system
-          text: '以下是口播文案，请将其转换为 SRT 字幕格式。
-
-            假设正常朗读语速约 5 字/秒，按顺序为每段分配时间轴。
-
-            仅输出 SRT 内容，不要加解释。
-
-
-            口播文案：
-
-            {{#1782440079724.text#}}'
-        selected: false
-        structured_output_enabled: false
-        title: llm_srt
-        type: llm
-        vision:
-          enabled: false
-      height: 88
-      id: '1782443609589'
-      position:
-        x: 1684.8968128897475
-        y: 658.140643385445
-      positionAbsolute:
-        x: 1684.8968128897475
-        y: 658.140643385445
+        x: 1061.8270003124037
+        y: 464.66176276344703
       selected: false
       sourcePosition: right
       targetPosition: left
@@ -579,11 +272,11 @@ workflow:
       height: 52
       id: '1782701321034'
       position:
-        x: 661.23318403066
-        y: 390.2508079589278
+        x: 728.8384634070428
+        y: 399.17918160337507
       positionAbsolute:
-        x: 661.23318403066
-        y: 390.2508079589278
+        x: 728.8384634070428
+        y: 399.17918160337507
       selected: false
       sourcePosition: right
       targetPosition: left
@@ -598,8 +291,8 @@ workflow:
           - id: key-value-651
             key: ''
             type: text
-            value: "{\n  \"image_url\": \"{{#1782721157287.image_url#}}\",\n  \"audio_url\"\
-              : \"{{#1782721157287.audio_url#}}\",\n  \"srt\": \"{{#1782443609589.text#}}\"\
+            value: "{\n  \"text\": \"{{#1782807199342.res_script#}}\",\n  \"today_date\"\
+              : \"{{#1782876170425.today_date#}}\",\n  \"today_week\": \"{{#1782876170425.today_week#}}\"\
               \n\n}"
           type: json
         headers: Content-Type:application/json
@@ -609,7 +302,7 @@ workflow:
           max_retries: 3
           retry_enabled: true
           retry_interval: 100
-        selected: false
+        selected: true
         ssl_verify: true
         timeout:
           max_connect_timeout: 0
@@ -622,62 +315,12 @@ workflow:
       height: 137
       id: '1782718094321'
       position:
-        x: 2408.1919230042204
-        y: 447.8707771395801
+        x: 1061.8270003124037
+        y: 661.6602258341704
       positionAbsolute:
-        x: 2408.1919230042204
-        y: 447.8707771395801
-      selected: false
-      sourcePosition: right
-      targetPosition: left
-      type: custom
-      width: 242
-    - data:
-        code: "import json\n\ndef main(http_get_bg: list, text_to_speech_files: list):\n\
-          \    DIFY_HOST = \"http://localhost:5001\"\n    # ---------- 1. 解析背景图 ----------\n\
-          \    image_url = \"\"\n    try:\n        if isinstance(http_get_bg, list)\
-          \ and len(http_get_bg) > 0:\n            image_url = http_get_bg[0].get(\"\
-          url\", \"\")\n            # if raw_image_url.startswith(\"/files/\"):\n\
-          \            #     image_url = DIFY_HOST + raw_image_url\n\n    except Exception\
-          \ as e:\n        print(\"解析 HTTP_GET_BG 失败:\", str(e))\n\n    # ----------\
-          \ 2. 解析音频 ----------\n    audio_url = \"\"\n    try:\n        if isinstance(text_to_speech_files,\
-          \ list) and len(text_to_speech_files) > 0:\n            audio_url = text_to_speech_files[0].get(\"\
-          url\", \"\")\n            # if raw_audio_url.startswith(\"/files/\"):\n\
-          \            #     audio_url = DIFY_HOST + raw_audio_url\n\n    except Exception\
-          \ as e:\n        print(\"解析 TEXT_TO_SPEECH 失败:\", str(e))\n\n    # ----------\
-          \ 4. 返回（给下游 HTTP 节点用） ----------\n    return {\n        \"image_url\": image_url,\n\
-          \        \"audio_url\": audio_url\n    }"
-        code_language: python3
-        outputs:
-          audio_url:
-            children: null
-            type: string
-          image_url:
-            children: null
-            type: string
-        selected: false
-        title: 数据解析
-        type: code
-        variables:
-        - value_selector:
-          - '1782443321372'
-          - files
-          value_type: array[file]
-          variable: http_get_bg
-        - value_selector:
-          - '1782443032644'
-          - files
-          value_type: array[file]
-          variable: text_to_speech_files
-      height: 52
-      id: '1782721157287'
-      position:
-        x: 2016.7679431850065
-        y: 402.11854157626124
-      positionAbsolute:
-        x: 2016.7679431850065
-        y: 402.11854157626124
-      selected: false
+        x: 1061.8270003124037
+        y: 661.6602258341704
+      selected: true
       sourcePosition: right
       targetPosition: left
       type: custom
@@ -703,11 +346,11 @@ workflow:
       height: 52
       id: '1782807199342'
       position:
-        x: 1365.2651450943195
-        y: 370.97789819081623
+        x: 1061.8270003124037
+        y: 582.6118162386232
       positionAbsolute:
-        x: 1365.2651450943195
-        y: 370.97789819081623
+        x: 1061.8270003124037
+        y: 582.6118162386232
       selected: false
       sourcePosition: right
       targetPosition: left
@@ -734,35 +377,56 @@ workflow:
       height: 52
       id: '1782876170425'
       position:
-        x: 661.23318403066
-        y: 529.9078738334728
+        x: 728.8384634070428
+        y: 535.7865937792451
       positionAbsolute:
-        x: 661.23318403066
-        y: 529.9078738334728
-      selected: true
+        x: 728.8384634070428
+        y: 535.7865937792451
+      selected: false
       sourcePosition: right
       targetPosition: left
       type: custom
       width: 242
     - data:
+        config:
+          frequency: daily
+          mode: visual
+          timezone: UTC
+          visual_config:
+            monthly_days:
+            - 1
+            on_minute: 0
+            time: 12:00 AM
+            weekdays:
+            - sun
+        frequency: daily
+        mode: visual
         selected: false
-        title: 用户输入
-        type: start
-        variables: []
-      height: 73
-      id: '1782876535946'
+        timezone: Asia/Shanghai
+        title: 定时触发器
+        type: trigger-schedule
+        visual_config:
+          monthly_days:
+          - 1
+          on_minute: 0
+          time: 8:00 AM
+          weekdays:
+          - sun
+      height: 130
+      id: '1783329245279'
       position:
-        x: -15.657976154904063
-        y: 406.4547549722519
+        x: -0.1475360655499287
+        y: 443.66176276344703
       positionAbsolute:
-        x: -15.657976154904063
-        y: 406.4547549722519
+        x: -0.1475360655499287
+        y: 443.66176276344703
+      selected: false
       sourcePosition: right
       targetPosition: left
       type: custom
       width: 242
     viewport:
-      x: -1612.2291361622156
-      y: -313.1556333237911
-      zoom: 1.0206303507134746
+      x: -189.875595610167
+      y: -355.1808983392066
+      zoom: 0.8432134161181171
   rag_pipeline_variables: []

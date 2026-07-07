@@ -179,13 +179,10 @@ async def tts(req: Request):
 @app.post("/make_video")
 async def make_video(req: MakeVideoRequest):
     print(f"[INFO] 收到早安视频合成任务...")
-    
     work_dir = None
     bg_video_path = ""
     try:
         work_dir = tempfile.mkdtemp()
-        print(f"[INFO] work_dir={work_dir}")
-        print(f"[INFO] VIDEO_LIBRARY_DIR={VIDEO_LIBRARY_DIR}")
         
         if os.path.isdir(VIDEO_LIBRARY_DIR):
             videos = [
@@ -205,8 +202,7 @@ async def make_video(req: MakeVideoRequest):
 
         if req.text:
             print(f"[INFO] TTS text length: {len(req.text)}")
-            print(f"[INFO] text: {req.text}")
-            raw_sentences = re.split(r'([。！？\n]+)', req.text)
+            raw_sentences = re.split(r'([，、。！？；：，,.\!?;\s\n]+)', req.text)
             sentences = ["".join(i).strip() for i in zip(raw_sentences[0::2], raw_sentences[1::2] + [""])]
             sentences = [s for s in sentences if s] # 过滤空串
 
@@ -233,7 +229,13 @@ async def make_video(req: MakeVideoRequest):
                 temp_audio_path = os.path.join(work_dir, f"segment_{i}.mp3")
                 
                 # 2. 逐句调用 edge-tts
-                communicate = edge_tts.Communicate(sentence, req.voice)
+                communicate = edge_tts.Communicate(
+                    sentence, 
+                    req.voice, 
+                    # rate = "-12%", 
+                    # pitch = "-6Hz",
+                    # volume = "-5%"
+                )
                 await communicate.save(temp_audio_path)
                 
                 # 3. 读取片段，获取绝对精确的物理时长
@@ -257,7 +259,7 @@ async def make_video(req: MakeVideoRequest):
             
             final_srt = "\n".join(srt_blocks)
             print(f"[OK] 拼装完成，总音频时长: {final_audio.duration:.2f}s")
-            print(f"[INFO] 完美句级字幕({len(srt_blocks)}句)生成成功:\n{final_srt[:150]}...")
+            print(f"[INFO] SRT({len(srt_blocks)}句)生成成功")
             
             final_audio.close()
         else:
@@ -318,7 +320,7 @@ async def make_video(req: MakeVideoRequest):
                     )
                     .with_start(start)
                     .with_duration(end - start)
-                    .with_position(("center", req.height - 320))
+                    .with_position(("center", req.height - 430))
                 )
 
         date_clips = []
@@ -339,7 +341,7 @@ async def make_video(req: MakeVideoRequest):
                 )
                 .with_start(0)
                 .with_duration(duration)
-                .with_position(("center", req.height // 2 - 240)) # 位于正中间偏上
+                .with_position(("center", req.height // 2 - 700)) # 位于正中间偏上
             )
             
             # 2. 巨大公历双位数字层（正居中）
@@ -355,7 +357,7 @@ async def make_video(req: MakeVideoRequest):
                 )
                 .with_start(0)
                 .with_duration(duration)
-                .with_position(("center", req.height // 2 - 110)) # 牢牢钉在视频正中心
+                .with_position(("center", req.height // 2 - 570)) # 牢牢钉在视频正中心
             )
             
             # 3. 农历地支层（居中靠下）
@@ -371,7 +373,7 @@ async def make_video(req: MakeVideoRequest):
                 )
                 .with_start(0)
                 .with_duration(duration)
-                .with_position(("center", req.height // 2 + 120)) # 位于正中间偏下
+                .with_position(("center", req.height // 2 - 340)) # 位于正中间偏下
             )
         except Exception as date_err:
             print(f"[WARNING] 时间水印渲染失败，跳过以确保视频完整生成: {date_err}")
